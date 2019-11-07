@@ -1,5 +1,6 @@
 from django.db import models
 from tallas.models import Talla
+from fabricantes.models import Fabricante
 
 # Create your models here.
 
@@ -20,7 +21,7 @@ class Zapato(models.Model):
     suela = models.CharField(max_length = 50)
     ocasion = models.CharField(max_length = 50)
     peso = models.IntegerField()
-    marca = models.CharField(max_length = 50)
+    marca = models.ForeignKey(Fabricante, on_delete = models.CASCADE)
     accesorios = models.CharField(max_length = 50)
 
     def __str__(self):

@@ -22,5 +22,7 @@ urlpatterns = [
     path('zapatos/', include('zapatos.urls')),
     path('clientes/', include('clientes.urls')),
     path('home/', title_page),
-    path('compras/', include('compras.urls')),
+    path('purchases/', include('purchases.urls')),
+    path(r'', include('django.contrib.auth.urls')),
+    path(r'', include('social_django.urls')),
 ]

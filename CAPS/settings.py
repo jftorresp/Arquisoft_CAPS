@@ -25,7 +25,7 @@ SECRET_KEY = '9uy=4u%dq2k2ox%h2t7h*_x@bv9)x5f^y55xa$6dd3%f^pi$+r'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.81.39.213', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'tallas',
     'clientes',
     'fabricantes',
-    'compras',
+    'purchases',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -133,3 +134,19 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_URL = "/login/auth0" 
+LOGIN_REDIRECT_URL = "/" 
+LOGOUT_REDIRECT_URL = "https://caps-jftorresp.auth0.com/v2/logout?returnTo=http%3A%2F%2F157.253.168.103:8000"
+
+SOCIAL_AUTH_TRAILING_SLASH = False # Remove end slash from routes 
+SOCIAL_AUTH_AUTH0_DOMAIN = 'caps-jftorresp.auth0.com' 
+SOCIAL_AUTH_AUTH0_KEY = 'uQWPioaXYXXGF1t9ORhvN2EVsVj4qWf3' 
+SOCIAL_AUTH_AUTH0_SECRET = '8ebja0-XODHRzIi4uLGVRA1RGKM7XRg5UUxqHd8QYH_DYp3BXKT7femEqp3QVbrn' 
+SOCIAL_AUTH_AUTH0_SCOPE = [ 
+	'openid', 
+	'profile' 
+] 
+AUTHENTICATION_BACKENDS = { 
+	'CAPS.auth0backend.Auth0',
+	'django.contrib.auth.backends.ModelBackend', 
+}

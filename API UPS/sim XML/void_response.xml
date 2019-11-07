@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<VoidShipmentResponse>
+    <Response>
+        <TransactionReference>
+            <CustomerContext>Customer Comment</CustomerContext>
+            <XpciVersion>1.0</XpciVersion>
+        </TransactionReference>
+        <ResponseStatusCode>1</ResponseStatusCode>
+        <ResponseStatusDescription>RETENER</ResponseStatusDescription>
+    </Response>
+    <Status>
+        <StatusType>
+            <Code>1</Code>
+            <Description>RETENER</Description>
+        </StatusType>
+        <StatusCode>
+            <Code>1</Code>
+            <Description>RETENER</Description>
+        </StatusCode>
+    </Status>
+</VoidShipmentResponse>
